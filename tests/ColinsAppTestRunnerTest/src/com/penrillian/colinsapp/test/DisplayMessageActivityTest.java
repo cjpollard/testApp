@@ -1,8 +1,8 @@
 package com.penrillian.colinsapp.test;
 
-import android.test.AndroidTestCase;
+import android.test.InstrumentationTestCase;
 
-public class DisplayMessageActivityTest extends AndroidTestCase {
+public class DisplayMessageActivityTest extends InstrumentationTestCase {
 
 	public DisplayMessageActivityTest() {
 		super();
