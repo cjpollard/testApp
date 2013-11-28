@@ -17,6 +17,6 @@ public class DisplayMessageActivityTest extends AndroidTestCase {
 	}
 	
 	public void testPreconditions() {
-		
+		assert true;
 	}
 }
