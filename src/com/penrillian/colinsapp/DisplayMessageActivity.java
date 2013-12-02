@@ -16,7 +16,7 @@ public class DisplayMessageActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		Intent intent = getIntent();
 		String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
-		
+		String skewed = skewMessage(message);
 		TextView textView = new TextView(this);
 		textView.setId(R.id.default_text);
 		textView.setTextSize(40);
@@ -26,6 +26,17 @@ public class DisplayMessageActivity extends Activity {
 		setContentView(textView);		
 		// Show the Up button in the action bar.
 		setupActionBar();
+	}
+	
+	private String skewMessage(String message) {
+		char[] messageCharacters = message.toCharArray();
+		char[] newCharArray;
+		for(int i=0; i<messageCharacters.length; i++){
+			for(int j=messageCharacters.length; j>-1; j--){
+				messageCharacters[i] = newCharArray[j];
+			}
+		}
+		return newCharArray.toString();
 	}
 
 	/**
