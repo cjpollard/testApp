@@ -20,7 +20,7 @@ public class DisplayMessageActivity extends Activity {
 		TextView textView = new TextView(this);
 		textView.setId(R.id.default_text);
 		textView.setTextSize(40);
-		textView.setText(message);
+		textView.setText(skewed);
 		
 		super.onCreate(savedInstanceState);
 		setContentView(textView);		
@@ -30,7 +30,7 @@ public class DisplayMessageActivity extends Activity {
 	
 	private String skewMessage(String message) {
 		char[] messageCharacters = message.toCharArray();
-		char[] newCharArray;
+		char[] newCharArray = new char[messageCharacters.length];
 		for(int i=0; i<messageCharacters.length; i++){
 			for(int j=messageCharacters.length; j>-1; j--){
 				messageCharacters[i] = newCharArray[j];
