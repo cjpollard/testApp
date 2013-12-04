@@ -16,11 +16,10 @@ public class DisplayMessageActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		Intent intent = getIntent();
 		String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
-		String skewed = skewMessage(message);
 		TextView textView = new TextView(this);
 		textView.setId(R.id.default_text);
 		textView.setTextSize(40);
-		textView.setText(skewed);
+		textView.setText(message);
 		
 		super.onCreate(savedInstanceState);
 		setContentView(textView);		
@@ -28,17 +27,6 @@ public class DisplayMessageActivity extends Activity {
 		setupActionBar();
 	}
 	
-	private String skewMessage(String message) {
-		char[] messageCharacters = message.toCharArray();
-		char[] newCharArray = new char[messageCharacters.length];
-		for(int i=0; i<messageCharacters.length; i++){
-			for(int j=messageCharacters.length; j>-1; j--){
-				messageCharacters[i] = newCharArray[j];
-			}
-		}
-		return newCharArray.toString();
-	}
-
 	/**
 	 * Set up the {@link android.app.ActionBar}, if the API is available.
 	 */
