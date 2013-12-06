@@ -12,13 +12,14 @@ import android.widget.EditText;
 public class MainActivity extends Activity {
 	
 	public final static String EXTRA_MESSAGE = "com.penrillian.colinsapp.MESSAGE";
+	private EditText editText;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		getActionBar().setDisplayHomeAsUpEnabled(true);
+//		getActionBar().setDisplayHomeAsUpEnabled(true);
 	}
 
 	@Override
@@ -26,6 +27,7 @@ public class MainActivity extends Activity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.main_activity_actions, menu);
+		editText = (EditText) findViewById(R.id.edit_message);
 		return super.onCreateOptionsMenu(menu);
 	}
 	
@@ -45,7 +47,6 @@ public class MainActivity extends Activity {
 	
 	public void sendMessage(View view) {
 		Intent intent = new Intent(this, DisplayMessageActivity.class);
-		EditText editText = (EditText) findViewById(R.id.edit_message);
 		String message = editText.getText().toString();
 		intent.putExtra(EXTRA_MESSAGE, message);
 		startActivity(intent);
