@@ -1,6 +1,7 @@
 package com.penrillian.colinsapp.test;
 
 import android.test.ActivityInstrumentationTestCase2;
+import android.test.TouchUtils;
 import android.test.ViewAsserts;
 import android.test.suitebuilder.annotation.MediumTest;
 import android.view.View;
@@ -38,7 +39,7 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
 		assertNotNull("mMainActivity is null", mMainActivity);
 		assertNotNull("mSendButton is null", mSendButton);
 	}
-	@MediumTest
+	
 	public void testSendButton_layout() {
 		final View decorView = mMainActivity.getWindow().getDecorView();
 		
